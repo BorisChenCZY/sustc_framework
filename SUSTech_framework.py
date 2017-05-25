@@ -4,12 +4,6 @@ from bs4 import BeautifulSoup
 import html
 from lxml.html.soupparser import unescape
 import json
-import pickle
-from selenium import webdriver
-import selenium
-from PyQt5 import QtCore, QtGui, uic
-qtCreatorFile = './untitled.ui'
-Ui_MainWindow, QtBaseClass = uic.loadUiType(qtCreatorFile)
 
 class SUSTech(object):
 
@@ -217,14 +211,3 @@ class MyApp(QtGui.QMainWindow, Ui_MainWindow):
         Ui_MainWindow.__init__(self)
         self.setupUi(self)
         
-if __name__ == '__main__':
-    sustc = SUSTech(username, password, 'http://jwxt.sustc.edu.cn/jsxsd')
-    sustc.login()
-    sustc.get_website('http://jwxt.sustc.edu.cn/jsxsd/xsxk/xsxk_index?jx0502zbid=054B5FA7E55F44E0BB3D24DB3BC561')
-
-    get_selected_course(sustc)
-
-    app = QtGui.QApplication(sys.argv)
-    window = MyApp()
-    window.show()
-    sys.exit(app.exec_())
